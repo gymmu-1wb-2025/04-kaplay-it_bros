@@ -12,9 +12,15 @@ const k = kaplay({
 	debugKey: "r",
 });
 
-k.scene("init", sc00);
-k.scene("lvl-01", sc01);
+k.setGravity(1200);
 
-k.go("init");
+k.add([k.circle(20), k.pos(320, 240), k.body(), k.area()]);
+k.add([
+	k.rect(640, 20),
+	k.pos(0, 460),
+	k.color(k.GREEN),
+	k.body({ isStatic: true }),
+	k.area(),
+]);
 
 export default k;
