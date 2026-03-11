@@ -12,9 +12,4 @@ const k = kaplay({
 	debugKey: "r",
 });
 
-k.scene("init", sc00);
-k.scene("lvl-01", sc01);
-
-k.go("init");
-
 export default k;
