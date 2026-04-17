@@ -1,0 +1,94 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Flag Guesser</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: white;
+            font-family: Arial;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .box {
+            margin: 20px;
+            padding: 15px;
+            border: 2px solid white;
+        }
+
+        .flag {
+            background-color: gray;
+            height: 100px;
+            text-align: center;
+            padding-top: 40px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            display: block;
+            margin: 5px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Flag Guesser</h1>
+
+<div class="box">
+    <h2>Spiel Vorschau</h2>
+
+    <p>Hier sieht man, wie unser Spiel ungefähr aufgebaut ist. Oben wird eine Flagge angezeigt und darunter gibt es vier Antwortmöglichkeiten.</p>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg" width="150">
+
+
+    <button onclick="richtig(this)">Schweiz</button>
+    <button onclick="falsch(this)">Deutschland</button>
+    <button onclick="falsch(this)">Frankreich</button>
+    <button onclick="falsch(this)">Italien</button>
+
+    <p id="text"></p>
+</div>
+
+<div class="box">
+    <h2>So funktioniert das Spiel</h2>
+    <p>Im Spiel wird dem Spieler eine Flagge angezeigt. Die Aufgabe ist es, das richtige Land zu erkennen.</p>
+    <p>Unter der Flagge gibt es vier Auswahlmöglichkeiten. Nur eine Antwort ist korrekt, die anderen drei sind falsch.</p>
+    <p>Wenn man auf eine Antwort klickt, bekommt man direkt eine Rückmeldung, ob die Antwort richtig oder falsch ist.</p>
+</div>
+
+<div class="box">
+    <h2>Unsere Idee</h2>
+    <p>Am Anfang hatten wir verschiedene Ideen für unser Projekt. Dazu gehörten Spiele wie Pong, Tic Tac Toe und Air Hockey.</p>
+    <p>Tic Tac Toe konnten wir nicht umsetzen, weil dieses Spiel bereits von jemand anderem aus der Klasse gemacht wurde.</p>
+    <p>Pong und Air Hockey fanden wir zwar interessant, aber diese Spiele wären für uns zu schwierig und zu kompliziert gewesen.</p>
+    <p>Deshalb haben wir weiter nach Ideen gesucht und sind auf ein Flaggen-Quiz gestossen. Diese Idee fanden wir passend, weil sie einfacher umzusetzen ist und trotzdem ein richtiges Spiel ergibt. Ausserdem ist es ein Spiel, welches wir selber gerne Spielen.</p>
+</div>
+
+<div class="box">
+    <h2>Code Erklärung</h2>
+
+</div>
+
+<script>
+    function richtig(button) {
+        button.style.backgroundColor = "green";
+        document.getElementById("text").innerHTML = "Richtig!";
+    }
+
+    function falsch(button) {
+        button.style.backgroundColor = "red";
+        document.getElementById("text").innerHTML = "Falsch!";
+    }
+</script>
+
+</body>
+</html>
