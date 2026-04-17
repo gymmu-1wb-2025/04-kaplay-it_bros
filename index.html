@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaplay Projekt</title>
-
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="src/main.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flag Guesser</title>
+    <link rel="stylesheet" href="/quiz.css" />
 </head>
 <body>
-    <header style="grid-area: header">
-        <h1>Spiel Projekt</h1>
-    </header>
+    <div id="score-box">
+        <div id="score-counter">Richtig: 0</div>
+        <div id="highscore-counter">Highscore: 0</div>
+    </div>
 
-    <main style="grid-area: main">
-        <canvas id="game-canvas"></canvas>
-    </main>
+    <div id="quiz-container">
+        <h1>Flag Guesser</h1>
 
-    <footer style="grid-area: footer">Spielprojekt</footer>
+        <img id="flag-image" alt="Flagge" />
 
+        <button id="option0" type="button">Option 0</button>
+        <button id="option1" type="button">Option 1</button>
+        <button id="option2" type="button">Option 2</button>
+        <button id="option3" type="button">Option 3</button>
+
+        <button id="next-question" type="button" hidden>Nächste Frage</button>
+    </div>
+
+    <script type="module" src="/src/quiz.js"></script>
 </body>
 </html>

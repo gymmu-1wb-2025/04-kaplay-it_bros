@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Flag Guesser</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+<h1>Flag Guesser</h1>
+<p class="subtitle">Informationswebsite zu unserem Spiel</p>
+</header>
+
+    <main>
+
+        <section class="box">
+<h2>Spiel Vorschau</h2>
+
+ <p>
+ Hier sieht man, wie unser Spiel ungefähr aufgebaut ist. Oben stehen die beiden
+ Schwierigkeitsgrade <strong>Easy</strong> und <strong>Hard</strong>. Darunter wird eine Flagge angezeigt und darunter gibt es vier Antwortmöglichkeiten. Oben links steht der Highscore und oben rechts die Anzahl richtiger Antworten. Im Hard-Modus gibt es zusätzlich einen Timer von 10 Sekunden.
+</p>
+
+ <div class="preview-box">
+
+<div class="mode-box">
+<button class="mode-button">Easy</button>
+<button class="mode-button">Hard</button>
+</div>
+
+<div class="score-box">
+<div class="score-left">Highscore: 0</div>
+<div class="score-right">Richtig: 0</div>
+</div>
+<div class="timer-box">
+Zeit: 10s
+</div>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg" class="flag" alt="Flagge der Schweiz">
+<div class="button-container">
+<button>Schweiz</button>
+<button>Deutschland</button>
+<button>Frankreich</button>
+<button>Italien</button>
+</div>
+
+<p id="text">
+ In Easy gibt es vier Antwortmöglichkeiten. In Hard kommt zusätzlich der Timer dazu.
+</p>
+</div>
+</section>
+
+<section class="box">
+<h2>So funktioniert das Spiel</h2>
+
+ <p>
+Im Spiel wird dem Spieler eine Flagge angezeigt. Die Aufgabe ist es, das richtige Land zu erkennen.
+</p>
+
+<p>
+  Unter der Flagge gibt es vier Auswahlmöglichkeiten. Nur eine Antwort ist korrekt.
+</p>
+
+<p>
+ Nach jeder Antwort bekommt man direkt eine Rückmeldung. Es gibt zwei Level:
+<strong>Easy</strong> und <strong>Hard</strong>. Bei Easy hat man vier
+ Auswahlmöglichkeiten und keinen Zeitdruck. Bei Hard gibt es zusätzlich einen Timer von 10 Sekunden, der das Spiel schwieriger macht.
+</p>
+</section>
+
+<section class="box">
+<h2>Unsere Idee</h2>
+
+<p>
+  Am Anfang hatten wir verschiedene Ideen wie Pong oder Tic Tac Toe.
+</p>
+
+ <p>
+Diese Spiele waren aber entweder zu kompliziert oder schon vergeben.
+</p>
+
+<p>
+Deshalb haben wir uns für ein Flaggen-Quiz entschieden, da es einfacher
+umzusetzen ist und trotzdem ein interessantes Spiel ergibt.
+</p>
+</section>
+
+<section class="box">
+<h2>Code Erklärung</h2>
+
+
+
+<p>
+Die Datei <strong>quiz.js</strong> steuert das ganze Verhalten unseres Spiels.
+Mit diesem Code wollten wir erreichen, dass das Flaggen-Quiz funktioniert
+ und auf die Eingaben des Spielers reagiert.
+</p>
+
+<p>
+Am Anfang holt der Code wichtige Elemente aus der HTML-Datei mit
+<strong>document.getElementById(...)</strong>. Dazu gehören das Bild der Flagge,
+die vier Antwort-Buttons, der Button für die nächste Frage sowie die Anzeige
+für den Punktestand und den Highscore. Dadurch kann JavaScript später diese
+Elemente verändern und das Spiel steuern.
+</p>
+
+<p>
+Danach werden die vier Antwort-Buttons in einem Array gespeichert. Das macht
+den Code einfacher, weil man dann mit einer Schleife über alle Buttons gehen kann.
+So können zum Beispiel alle Buttons gleichzeitig deaktiviert, zurückgesetzt
+oder neu beschriftet werden.
+</p>
+
+<p>
+Ausserdem gibt es wichtige Variablen wie <strong>flags</strong>,
+<strong>answer</strong>, <strong>score</strong>, <strong>highscore</strong>,
+<strong>difficulty</strong> und <strong>timeLeft</strong>. In ihnen speichert
+das Spiel seinen aktuellen Zustand. So weiss das Programm immer, welche Flagge
+gerade angezeigt wird, welche Antwort richtig ist, wie viele Punkte der Spieler
+hat und ob Easy oder Hard ausgewählt wurde.
+</p>
+
+<p>
+Der Code erstellt auch neue Elemente direkt mit JavaScript. Dazu gehören der
+Timer und die Auswahl für die Schwierigkeitsgrade Easy und Hard. Diese Elemente
+werden vor dem Bild der Flagge eingefügt, damit zuerst die Auswahl erscheint
+und danach das eigentliche Spiel beginnt.
+</p>
+
+<p>
+Eine wichtige Funktion ist <strong>updateScore()</strong>. Sie sorgt dafür,
+ dass die Anzeige für den aktuellen Punktestand und den Highscore immer
+ aktualisiert wird. Ohne diese Funktion würde sich die Anzeige nicht verändern,
+ obwohl im Hintergrund neue Werte gespeichert werden.
+</p>
+
+<p>
+Mit der Funktion <strong>randomIndex()</strong> wird eine Zufallszahl erzeugt.
+Diese wird gebraucht, um zufällig eine Flagge aus der Datei
+<strong>flags.json</strong> auszuwählen. So ist jede Runde anders und das Spiel
+ bleibt abwechslungsreich.
+</p>
+ <p>
+ Die Funktion <strong>getFileName()</strong> holt aus einem Bildpfad nur den
+ eigentlichen Dateinamen heraus. Danach wird mit <strong>setImageFromFlag()</strong>
+das passende Bild der Flagge gesetzt. So erscheint immer das richtige Bild
+zur aktuellen Frage.
+</p>
+
+<p>
+Mit <strong>showCorrectAnswer()</strong> wird die richtige Antwort grün markiert.
+Das ist wichtig, damit der Spieler nach dem Klicken sofort sieht, welche Lösung
+korrekt war. Bei einer falschen Antwort wird zusätzlich der gewählte Button rot.
+</p>
+
+<p>
+Die Funktionen <strong>hideQuiz()</strong> und <strong>showQuiz()</strong>
+regeln, was am Anfang sichtbar ist. Zuerst soll nicht sofort das ganze Spiel
+erscheinen, sondern zuerst die Auswahl zwischen Easy und Hard. Erst nach dieser
+Auswahl wird das eigentliche Quiz eingeblendet.
+</p>
+
+<p>
+Im Hard-Modus wird ein Timer gestartet. Die Funktion
+<strong>startTimer()</strong> setzt die Zeit auf 10 Sekunden und zählt dann
+jede Sekunde herunter. Wenn die Zeit abläuft, wird die Funktion
+<strong>handleTimeout()</strong> aufgerufen. Dann werden die Buttons deaktiviert,
+die richtige Antwort wird angezeigt und der aktuelle Punktestand wird auf null
+gesetzt. Der Highscore bleibt aber erhalten.
+</p>
+
+<p>
+Die Funktion <strong>setQuestion()</strong> erstellt eine neue Frage. Dabei wird
+zuerst eine zufällige Flagge ausgewählt. Danach wird die richtige Antwort gespeichert
+und drei weitere falsche Antworten werden ergänzt. Anschliessend werden die vier
+Antworten gemischt, damit die richtige Lösung nicht immer an derselben Stelle steht.
+Dann werden die Texte der Buttons neu gesetzt und der Timer startet erneut.
+</p>
+
+<p>
+Wenn der Spieler auf eine Antwort klickt, wird die Funktion
+<strong>selectOption()</strong> ausgeführt. Sie überprüft, ob die angeklickte
+Antwort mit der richtigen Lösung übereinstimmt. Ist die Antwort richtig, wird
+der Punktestand erhöht. Wenn der neue Wert grösser ist als der bisherige Highscore,
+wird auch der Highscore angepasst. Bei einer falschen Antwort wird der aktuelle
+Punktestand wieder auf null gesetzt.
+</p>
+
+<p>
+Damit das Spiel überhaupt Fragen stellen kann, müssen zuerst die Flaggendaten geladen
+werden. Das macht die Funktion <strong>loadFlags()</strong>. Sie lädt die Datei
+<strong>flags.json</strong>, liest die enthaltenen Daten ein und speichert nur die
+gültigen Einträge. Dadurch stehen dem Spiel alle Flaggen zur Verfügung.
+</p>
+
+<p>
+Die Funktion <strong>startGame()</strong> startet das Spiel, nachdem der Spieler
+Easy oder Hard gewählt hat. Dabei wird der Schwierigkeitsgrad gespeichert,
+die Auswahl wird ausgeblendet, das Quiz wird sichtbar gemacht und die erste
+Frage wird geladen.
+</p>
+ <p>
+ Ganz am Schluss gibt es noch die Funktion <strong>initQuiz()</strong>.
+Sie bereitet das ganze Spiel vor. Dort werden die Flaggendaten geladen,
+die Buttons mit den richtigen Funktionen verbunden und das Quiz zuerst versteckt.
+Danach wird der Startzustand angezeigt. Diese Funktion ist also die Startfunktion
+des ganzen Programms.
+</p>
+
+ <p>
+Zusammengefasst sorgt <strong>quiz.js</strong> dafür, dass aus der HTML-Struktur
+ein interaktives Spiel wird. Der Code lädt Flaggen, zeigt Fragen an, überprüft
+Antworten, zählt Punkte, speichert den Highscore und ergänzt im Hard-Modus
+zusätzlich einen Timer von 10 Sekunden.
+</p>

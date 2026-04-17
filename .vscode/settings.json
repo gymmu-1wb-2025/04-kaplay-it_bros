@@ -34,5 +34,8 @@
 	"git.suggestSmartCommit": true,
 	"markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
 	"markdown.validate.enabled": true,
-	"debug.javascript.autoAttachFilter": "onlyWithFlag"
+	"debug.javascript.autoAttachFilter": "onlyWithFlag",
+	"githubPullRequests.ignoredPullRequestBranches": [
+		"main"
+	]
 }

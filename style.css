@@ -1,25 +1,209 @@
 body {
+
+    background-color: #1e1e1e;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
     margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-areas:
-        "header"
-        "main"
-        "footer";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-    height: 100dvh;
+
+}
+
+header {
+
+    text-align: center;
+
+    padding: 20px;
+
+    border-bottom: 2px solid white;
+
+}
+
+h1 {
+
+    margin: 10px 0;
+
+    letter-spacing: 1px;
+
+}
+
+.subtitle {
+
+    color: #d0d0d0;
+
+    font-size: 18px;
+
+    margin: 10px 0 0 0;
+
 }
 
 main {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    margin: 20px;
+
 }
 
-canvas {
-    border: 1px solid black;
-    height: 480px;
-    width: 640px;
+.box {
+
+    margin: 20px 0;
+
+    padding: 20px;
+
+    border: 2px solid white;
+
+    background-color: #2a2a2a;
+
+    min-height: 150px;
+
+}
+
+.box h2 {
+
+    margin-top: 0;
+
+    letter-spacing: 1px;
+
+}
+
+.preview-box {
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    border: 2px solid white;
+
+    background-color: #181818;
+
+}
+
+.mode-box {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+}
+
+.mode-button {
+
+    margin: 0 10px;
+
+    padding: 10px 20px;
+
+    background-color: #333;
+
+    color: white;
+
+    border: 2px solid white;
+
+    font-size: 16px;
+
+}
+
+.score-box {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+
+}
+
+.score-left {
+
+    background-color: #333;
+
+    padding: 10px;
+
+    border: 2px solid white;
+
+}
+
+.score-right {
+
+    background-color: #333;
+
+    padding: 10px;
+
+    border: 2px solid white;
+
+}
+
+.timer-box {
+
+    text-align: center;
+
+    margin-bottom: 15px;
+
+    padding: 10px;
+
+    border: 2px solid white;
+
+    background-color: #333;
+
+    font-size: 18px;
+
+    letter-spacing: 1px;
+
+}
+
+.flag {
+
+    display: block;
+
+    margin: 20px auto;
+
+    width: 180px;
+
+    border: 2px solid white;
+
+    background-color: white;
+
+}
+
+.button-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+button {
+
+    margin: 5px 0;
+
+    padding: 12px;
+
+    background-color: #333;
+
+    color: white;
+
+    border: 2px solid white;
+
+    font-size: 16px;
+
+    text-align: center;
+
+}
+
+#text {
+
+    margin-top: 15px;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+}
+
+p {
+
+    line-height: 1.5;
+
 }
